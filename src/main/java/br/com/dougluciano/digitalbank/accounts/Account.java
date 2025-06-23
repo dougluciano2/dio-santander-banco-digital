@@ -21,10 +21,15 @@ public abstract class Account implements AccountOps {
         this.balance = 0.0;
     }
 
+    public String showCurrentBalance(){
+        return String.format("O saldo atual da conta é: %f", getBalance());
+    }
+
     @Override
     public void withdraw(Double value) {
         if (value > 0 && this.balance >= value) {
             this.balance -= value;
+            System.out.println(showCurrentBalance());
         } else {
             System.err.println("Saldo insuficiente ou valor de saque inválido.");
         }
@@ -34,6 +39,7 @@ public abstract class Account implements AccountOps {
     public void deposit(Double value) {
         if (value > 0) {
             this.balance += value;
+            System.out.println(showCurrentBalance());
         } else {
             System.err.println("Valor de depósito inválido.");
         }
@@ -44,6 +50,7 @@ public abstract class Account implements AccountOps {
         if (value > 0 && this.balance >= value) {
             this.withdraw(value);
             destinationAccount.deposit(value);
+            System.out.println(showCurrentBalance());
         } else {
             System.err.println("Saldo insuficiente ou valor de transferência inválido.");
         }
@@ -66,7 +73,7 @@ public abstract class Account implements AccountOps {
         System.out.printf("Titular: %s%n", this.customer.getCustomerFullName());
         System.out.printf("Agência: %d%n", this.bankOfficeCode);
         System.out.printf("Conta: %d%n", this.accountNumber);
-        System.out.printf("Saldo: R$ %.2f%n", this.balance);
+        System.out.println(showCurrentBalance());
         System.out.println("==============================");
 
     }
