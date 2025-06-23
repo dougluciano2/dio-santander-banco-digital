@@ -78,4 +78,15 @@ public abstract class Account implements AccountOps {
 
     }
 
+    public abstract String getAccountTypeName();
+
+    public String getAccountInfo() {
+        return String.format("Titular: %s | Agência: %d | Tipo: %s | Conta: %d",
+                this.customer.getCustomerFullName(),
+                this.bankOfficeCode,
+                this.getAccountTypeName(),
+                this.getAccountNumber()
+        );
+    }
+
 }
