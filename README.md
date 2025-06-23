@@ -3,7 +3,7 @@
 ![Java](https://img.shields.io/badge/Java-21-blue?logo=openjdk&logoColor=white)
 ![Maven](https://img.shields.io/badge/Maven-3.9+-red?logo=apachemaven&logoColor=white)
 ![Lombok](https://img.shields.io/badge/Lombok-1.18.32-purple?logo=projectlombok&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 
 **Desenvolvido por:** [dougluciano2](https://github.com/dougluciano2) | Digital Innovation One (DIO)
 
